@@ -1,0 +1,141 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "5bb95faf-ba2e-490f-aea4-fd456a9ba667": {
+        "id": "5bb95faf-ba2e-490f-aea4-fd456a9ba667",
+        "parent": null,
+        "name": "U30_03_2020.py",
+        "type": "PYTHON_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "U30_03_2020.py",
+        "cursor": {
+          "lineNumber": 13,
+          "column": 52
+        },
+        "config": {
+          "runtime": "python2.7",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "ddbtesthistory",
+            "config": {
+              "StartingPosition": "LATEST",
+              "BatchSize": "100"
+            }
+          }
+        ],
+        "testCases": {
+          "0ce0e800-4e36-4ba1-8712-26128b35b905": {
+            "id": "0ce0e800-4e36-4ba1-8712-26128b35b905",
+            "name": "Test event",
+            "functionId": "5bb95faf-ba2e-490f-aea4-fd456a9ba667",
+            "event": "{\r\n    \"Records\": [\r\n        {\r\n            \"eventID\": \"c4ca4238a0b923820dcc509a6f75849b\",\r\n            \"eventName\": \"INSERT\",\r\n            \"eventVersion\": \"1.1\",\r\n            \"eventSource\": \"aws:dynamodb\",\r\n            \"awsRegion\": \"us-east-1\",\r\n            \"dynamodb\": {\r\n                \"Keys\": {\r\n                    \"Name\": {\r\n                        \"S\": \"101\"\r\n                    }\r\n                },\r\n                \"NewImage\": {\r\n                    \"Name\": {\r\n                        \"S\": \"New item!\"\r\n                    },\r\n                    \"Email\": {\r\n                        \"S\": \"kumudika@adroitlogic.com\"\r\n                    }\r\n                },\r\n                \"ApproximateCreationDateTime\": 1428537600,\r\n                \"SequenceNumber\": \"4421584500000000017450439091\",\r\n                \"SizeBytes\": 26,\r\n                \"StreamViewType\": \"NEW_AND_OLD_IMAGES\"\r\n            },\r\n            \"eventSourceARN\": \"arn:aws:dynamodb:us-east-1:123456789012:table/ExampleTableWithStream/stream/2015-06-27T00:48:05.899\"\r\n        }\r\n    ]\r\n}",
+            "eventTemplate": "dynamodb-update"
+          }
+        }
+      }
+    },
+    "openFiles": [
+      "5bb95faf-ba2e-490f-aea4-fd456a9ba667"
+    ],
+    "currentFileId": "5bb95faf-ba2e-490f-aea4-fd456a9ba667",
+    "resources": {
+      "ddbtesthistory": {
+        "name": "ddbtesthistory",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "table": {
+            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/testhistory",
+            "name": "testhistory",
+            "partitionKey": "Name",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "payPerRequest": true,
+            "mode": 1,
+            "streamArn": "arn:aws:dynamodb:us-east-1:318300609668:table/testhistory/stream/2020-03-08T17:34:03.822"
+          },
+          "isGlobalEditMode": false,
+          "parameters": {
+            "Key": {},
+            "Item": {},
+            "ExpressionAttributeValues": {}
+          },
+          "triggerParams": {
+            "StartingPosition": "LATEST",
+            "BatchSize": "100"
+          },
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          },
+          "valid": true
+        }
+      },
+      "ses-kumudika@adroitlogic.com": {
+        "name": "ses-kumudika@adroitlogic.com",
+        "type": "SES",
+        "config": {
+          "selectedIdentity": "kumudika@adroitlogic.com",
+          "projectRegion": "us-east-1"
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "json": {
+          "name": "json",
+          "version": "18.2",
+          "dev": true,
+          "language": "python"
+        },
+        "boto3": {
+          "name": "boto3",
+          "language": "python",
+          "version": "1.9.6",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "U30_03_2020",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "language": "python",
+    "platformRegions": {},
+    "lastSave": 1585567370184
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "u30_03_2020",
+      "url": "https://github.com/Kumudikatest/u30_03_2020"
+    }
+  }
+}
